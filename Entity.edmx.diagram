@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="610970c17df44a92b53a8f4b8976ca63" Name="Diagram1">
+        <EntityTypeShape EntityType="YazilimYapimiModel.Tbl_admin" Width="1.5" PointX="6.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="YazilimYapimiModel.Tbl_Urun" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="YazilimYapimiModel.Tbl_User" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="YazilimYapimiModel.FK_Tbl_Urun_Tbl_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

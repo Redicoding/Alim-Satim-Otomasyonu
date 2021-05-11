@@ -21,5 +21,19 @@ namespace Yazılım_Yapımı_Project
         {
             Application.Exit();
         }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            AdminGiris admn = new AdminGiris();
+            admn.Show();
+            this.Hide();
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            UserGiris usr = new UserGiris();
+            usr.Show();
+            this.Hide();
+        }
     }
 }
