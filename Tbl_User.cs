@@ -29,6 +29,7 @@ namespace Yazılım_Yapımı_Project
         public string Tel { get; set; }
         public string Mail { get; set; }
         public Nullable<int> Bakiye { get; set; }
+        public Nullable<int> BAKIYEYUKLE { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_Urun> Tbl_Urun { get; set; }

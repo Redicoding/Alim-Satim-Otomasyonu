@@ -23,15 +23,17 @@ namespace Yazılım_Yapımı_Project
         }
 
         YazilimYapimiEntities en = new YazilimYapimiEntities();
+        
         private void btnGiris_Click(object sender, EventArgs e)
-        {
+        {                                             
             var sorgu = from x in en.Tbl_User
                         where x.KAd == txtKullanici.Text && x.Password == txtSifre.Text
-                        select x;
-
+                        select x;         
+            
             if (sorgu.Any())
-            {
+            {               
                 FrmUserPanel frmu = new FrmUserPanel();
+                frmu.kullaniciadi = txtKullanici.Text;
                 frmu.Show();
                 this.Hide();
             }
@@ -39,8 +41,9 @@ namespace Yazılım_Yapımı_Project
             {
                 MessageBox.Show("Kullanıcı Adı Veya Şifre Hatalı !", "HATALI GİRİŞ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
-
+        
         private void btnUyeOl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmUserKayit frmk = new FrmUserKayit();

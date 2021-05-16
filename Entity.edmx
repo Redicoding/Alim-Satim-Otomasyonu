@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="YazilimYapimiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="YazilimYapimiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Tbl_admin">
           <Key>
             <PropertyRef Name="adminid" />
@@ -22,6 +22,7 @@
           <Property Name="URUNFIYAT" Type="float" />
           <Property Name="URUNSTOK" Type="float" />
           <Property Name="KULLANICI" Type="int" />
+          <Property Name="URUNDURUM" Type="bit" />
         </EntityType>
         <EntityType Name="Tbl_User">
           <Key>
@@ -36,6 +37,7 @@
           <Property Name="Tel" Type="varchar" MaxLength="15" />
           <Property Name="Mail" Type="varchar" MaxLength="50" />
           <Property Name="Bakiye" Type="int" />
+          <Property Name="BAKIYEYUKLE" Type="int" />
         </EntityType>
         <Association Name="FK_Tbl_Urun_Tbl_User">
           <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="0..1" />
@@ -58,8 +60,7 @@
             <End Role="Tbl_Urun" EntitySet="Tbl_Urun" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="YazilimYapimiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -81,6 +82,7 @@
           <Property Name="URUNSTOK" Type="Double" />
           <Property Name="KULLANICI" Type="Int32" />
           <NavigationProperty Name="Tbl_User" Relationship="Self.FK_Tbl_Urun_Tbl_User" FromRole="Tbl_Urun" ToRole="Tbl_User" />
+          <Property Name="URUNDURUM" Type="Boolean" />
         </EntityType>
         <EntityType Name="Tbl_User">
           <Key>
@@ -96,6 +98,7 @@
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Bakiye" Type="Int32" />
           <NavigationProperty Name="Tbl_Urun" Relationship="Self.FK_Tbl_Urun_Tbl_User" FromRole="Tbl_User" ToRole="Tbl_Urun" />
+          <Property Name="BAKIYEYUKLE" Type="Int32" />
         </EntityType>
         <Association Name="FK_Tbl_Urun_Tbl_User">
           <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="0..1" />
@@ -136,6 +139,7 @@
           <EntitySetMapping Name="Tbl_Urun">
             <EntityTypeMapping TypeName="YazilimYapimiModel.Tbl_Urun">
               <MappingFragment StoreEntitySet="Tbl_Urun">
+                <ScalarProperty Name="URUNDURUM" ColumnName="URUNDURUM" />
                 <ScalarProperty Name="Urunid" ColumnName="Urunid" />
                 <ScalarProperty Name="URUNAD" ColumnName="URUNAD" />
                 <ScalarProperty Name="URUNFIYAT" ColumnName="URUNFIYAT" />
@@ -147,6 +151,7 @@
           <EntitySetMapping Name="Tbl_User">
             <EntityTypeMapping TypeName="YazilimYapimiModel.Tbl_User">
               <MappingFragment StoreEntitySet="Tbl_User">
+                <ScalarProperty Name="BAKIYEYUKLE" ColumnName="BAKIYEYUKLE" />
                 <ScalarProperty Name="Kid" ColumnName="Kid" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="Soyad" ColumnName="Soyad" />

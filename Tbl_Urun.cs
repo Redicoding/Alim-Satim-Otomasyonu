@@ -19,6 +19,7 @@ namespace Yazılım_Yapımı_Project
         public Nullable<double> URUNFIYAT { get; set; }
         public Nullable<double> URUNSTOK { get; set; }
         public Nullable<int> KULLANICI { get; set; }
+        public Nullable<bool> URUNDURUM { get; set; }
     
         public virtual Tbl_User Tbl_User { get; set; }
     }
