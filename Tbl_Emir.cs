@@ -12,11 +12,16 @@ namespace Yazılım_Yapımı_Project
     using System;
     using System.Collections.Generic;
     
-    public partial class Tbl_admin
+    public partial class Tbl_Emir
     {
-        public byte adminid { get; set; }
-        public string adminisim { get; set; }
-        public string sifre { get; set; }
-        public Nullable<double> komisyon { get; set; }
+        public int EmirId { get; set; }
+        public string EmirUrun { get; set; }
+        public Nullable<double> EmirKilo { get; set; }
+        public Nullable<double> EmirFiyat { get; set; }
+        public string EmirTarih { get; set; }
+        public Nullable<bool> EmirDurum { get; set; }
+        public Nullable<int> EmirUser { get; set; }
+    
+        public virtual Tbl_User Tbl_User { get; set; }
     }
 }

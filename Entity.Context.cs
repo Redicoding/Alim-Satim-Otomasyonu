@@ -28,5 +28,6 @@ namespace Yazılım_Yapımı_Project
         public virtual DbSet<Tbl_admin> Tbl_admin { get; set; }
         public virtual DbSet<Tbl_Urun> Tbl_Urun { get; set; }
         public virtual DbSet<Tbl_User> Tbl_User { get; set; }
+        public virtual DbSet<Tbl_Emir> Tbl_Emir { get; set; }
     }
 }

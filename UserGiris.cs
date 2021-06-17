@@ -49,5 +49,10 @@ namespace Yazılım_Yapımı_Project
             FrmUserKayit frmk = new FrmUserKayit();
             frmk.Show();            
         }
+
+        private void UserGiris_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

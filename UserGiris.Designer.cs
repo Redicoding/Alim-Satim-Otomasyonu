@@ -85,6 +85,7 @@ namespace Yazılım_Yapımı_Project
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(192, 34);
             this.txtSifre.TabIndex = 7;
+            this.txtSifre.UseSystemPasswordChar = true;
             // 
             // btnGiris
             // 
@@ -139,6 +140,7 @@ namespace Yazılım_Yapımı_Project
             this.Name = "UserGiris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserGiris";
+            this.Load += new System.EventHandler(this.UserGiris_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ExitButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -66,6 +66,7 @@ namespace Yazılım_Yapımı_Project
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(192, 34);
             this.txtSifre.TabIndex = 15;
+            this.txtSifre.UseSystemPasswordChar = true;
             // 
             // label2
             // 

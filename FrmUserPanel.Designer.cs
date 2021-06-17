@@ -34,6 +34,12 @@ namespace Yazılım_Yapımı_Project
             this.lblbakiye = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblSTR = new System.Windows.Forms.Label();
+            this.lblUSD = new System.Windows.Forms.Label();
+            this.lblJPY = new System.Windows.Forms.Label();
+            this.btnJpy = new System.Windows.Forms.Button();
+            this.btnSTR = new System.Windows.Forms.Button();
+            this.btnUSD = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUyari = new System.Windows.Forms.RichTextBox();
             this.btnYukle = new System.Windows.Forms.Button();
@@ -63,6 +69,10 @@ namespace Yazılım_Yapımı_Project
             this.txtUrunStok = new System.Windows.Forms.TextBox();
             this.txtUrunFiyat = new System.Windows.Forms.TextBox();
             this.txtUrunAd = new System.Windows.Forms.TextBox();
+            this.btnEmir = new System.Windows.Forms.Button();
+            this.txtFIYAT = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -87,7 +97,7 @@ namespace Yazılım_Yapımı_Project
             this.panel1.Controls.Add(this.lblAd);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(211, 90);
+            this.panel1.Size = new System.Drawing.Size(226, 90);
             this.panel1.TabIndex = 1;
             // 
             // lblbakiye
@@ -110,16 +120,82 @@ namespace Yazılım_Yapımı_Project
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblSTR);
+            this.panel2.Controls.Add(this.lblUSD);
+            this.panel2.Controls.Add(this.lblJPY);
+            this.panel2.Controls.Add(this.btnJpy);
+            this.panel2.Controls.Add(this.btnSTR);
+            this.panel2.Controls.Add(this.btnUSD);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtUyari);
             this.panel2.Controls.Add(this.btnYukle);
             this.panel2.Controls.Add(this.txtBakiye);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(12, 133);
+            this.panel2.Location = new System.Drawing.Point(12, 108);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 403);
+            this.panel2.Size = new System.Drawing.Size(226, 483);
             this.panel2.TabIndex = 2;
+            // 
+            // lblSTR
+            // 
+            this.lblSTR.AutoSize = true;
+            this.lblSTR.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSTR.Location = new System.Drawing.Point(53, 262);
+            this.lblSTR.Name = "lblSTR";
+            this.lblSTR.Size = new System.Drawing.Size(36, 17);
+            this.lblSTR.TabIndex = 11;
+            this.lblSTR.Text = "STR";
+            // 
+            // lblUSD
+            // 
+            this.lblUSD.AutoSize = true;
+            this.lblUSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUSD.Location = new System.Drawing.Point(164, 190);
+            this.lblUSD.Name = "lblUSD";
+            this.lblUSD.Size = new System.Drawing.Size(37, 17);
+            this.lblUSD.TabIndex = 10;
+            this.lblUSD.Text = "USD";
+            // 
+            // lblJPY
+            // 
+            this.lblJPY.AutoSize = true;
+            this.lblJPY.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblJPY.Location = new System.Drawing.Point(53, 190);
+            this.lblJPY.Name = "lblJPY";
+            this.lblJPY.Size = new System.Drawing.Size(33, 17);
+            this.lblJPY.TabIndex = 9;
+            this.lblJPY.Text = "JPY";
+            // 
+            // btnJpy
+            // 
+            this.btnJpy.Location = new System.Drawing.Point(0, 212);
+            this.btnJpy.Name = "btnJpy";
+            this.btnJpy.Size = new System.Drawing.Size(132, 33);
+            this.btnJpy.TabIndex = 8;
+            this.btnJpy.Text = "¥ JPY";
+            this.btnJpy.UseVisualStyleBackColor = true;
+            this.btnJpy.Click += new System.EventHandler(this.btnJpy_Click);
+            // 
+            // btnSTR
+            // 
+            this.btnSTR.Location = new System.Drawing.Point(3, 282);
+            this.btnSTR.Name = "btnSTR";
+            this.btnSTR.Size = new System.Drawing.Size(132, 33);
+            this.btnSTR.TabIndex = 7;
+            this.btnSTR.Text = "£ STERLİN";
+            this.btnSTR.UseVisualStyleBackColor = true;
+            this.btnSTR.Click += new System.EventHandler(this.btnSTR_Click);
+            // 
+            // btnUSD
+            // 
+            this.btnUSD.Location = new System.Drawing.Point(138, 212);
+            this.btnUSD.Name = "btnUSD";
+            this.btnUSD.Size = new System.Drawing.Size(82, 33);
+            this.btnUSD.TabIndex = 6;
+            this.btnUSD.Text = "$ USD";
+            this.btnUSD.UseVisualStyleBackColor = true;
+            this.btnUSD.Click += new System.EventHandler(this.btnUSD_Click);
             // 
             // label4
             // 
@@ -133,7 +209,7 @@ namespace Yazılım_Yapımı_Project
             // 
             // txtUyari
             // 
-            this.txtUyari.Location = new System.Drawing.Point(3, 269);
+            this.txtUyari.Location = new System.Drawing.Point(8, 360);
             this.txtUyari.Name = "txtUyari";
             this.txtUyari.Size = new System.Drawing.Size(205, 120);
             this.txtUyari.TabIndex = 4;
@@ -141,17 +217,17 @@ namespace Yazılım_Yapımı_Project
             // 
             // btnYukle
             // 
-            this.btnYukle.Location = new System.Drawing.Point(43, 198);
+            this.btnYukle.Location = new System.Drawing.Point(141, 282);
             this.btnYukle.Name = "btnYukle";
-            this.btnYukle.Size = new System.Drawing.Size(108, 38);
+            this.btnYukle.Size = new System.Drawing.Size(81, 33);
             this.btnYukle.TabIndex = 3;
-            this.btnYukle.Text = "Yükle";
+            this.btnYukle.Text = "₺ TRY";
             this.btnYukle.UseVisualStyleBackColor = true;
             this.btnYukle.Click += new System.EventHandler(this.btnYukle_Click);
             // 
             // txtBakiye
             // 
-            this.txtBakiye.Location = new System.Drawing.Point(19, 149);
+            this.txtBakiye.Location = new System.Drawing.Point(25, 140);
             this.txtBakiye.Name = "txtBakiye";
             this.txtBakiye.Size = new System.Drawing.Size(167, 30);
             this.txtBakiye.TabIndex = 2;
@@ -180,9 +256,9 @@ namespace Yazılım_Yapımı_Project
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(244, 58);
+            this.panel3.Location = new System.Drawing.Point(255, 99);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(624, 264);
+            this.panel3.Size = new System.Drawing.Size(624, 281);
             this.panel3.TabIndex = 3;
             // 
             // dataGridView1
@@ -194,7 +270,7 @@ namespace Yazılım_Yapımı_Project
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(624, 264);
+            this.dataGridView1.Size = new System.Drawing.Size(624, 281);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -202,7 +278,7 @@ namespace Yazılım_Yapımı_Project
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MV Boli", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(473, 5);
+            this.label5.Location = new System.Drawing.Point(511, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(159, 50);
             this.label5.TabIndex = 4;
@@ -266,7 +342,6 @@ namespace Yazılım_Yapımı_Project
             // 
             // txtAD
             // 
-            this.txtAD.Enabled = false;
             this.txtAD.Location = new System.Drawing.Point(977, 184);
             this.txtAD.Name = "txtAD";
             this.txtAD.Size = new System.Drawing.Size(161, 30);
@@ -283,7 +358,7 @@ namespace Yazılım_Yapımı_Project
             // 
             // btnSatınAl
             // 
-            this.btnSatınAl.Location = new System.Drawing.Point(1027, 288);
+            this.btnSatınAl.Location = new System.Drawing.Point(1038, 346);
             this.btnSatınAl.Name = "btnSatınAl";
             this.btnSatınAl.Size = new System.Drawing.Size(111, 34);
             this.btnSatınAl.TabIndex = 13;
@@ -324,7 +399,7 @@ namespace Yazılım_Yapımı_Project
             this.panel4.Controls.Add(this.txtUrunAd);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label12);
-            this.panel4.Location = new System.Drawing.Point(244, 331);
+            this.panel4.Location = new System.Drawing.Point(255, 386);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(894, 205);
             this.panel4.TabIndex = 16;
@@ -400,11 +475,54 @@ namespace Yazılım_Yapımı_Project
             this.txtUrunAd.TabIndex = 17;
             this.txtUrunAd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnEmir
+            // 
+            this.btnEmir.Location = new System.Drawing.Point(885, 346);
+            this.btnEmir.Name = "btnEmir";
+            this.btnEmir.Size = new System.Drawing.Size(144, 34);
+            this.btnEmir.TabIndex = 17;
+            this.btnEmir.Text = "Satış Emri";
+            this.btnEmir.UseVisualStyleBackColor = true;
+            this.btnEmir.Click += new System.EventHandler(this.btnEmir_Click);
+            // 
+            // txtFIYAT
+            // 
+            this.txtFIYAT.Location = new System.Drawing.Point(977, 298);
+            this.txtFIYAT.Name = "txtFIYAT";
+            this.txtFIYAT.Size = new System.Drawing.Size(161, 30);
+            this.txtFIYAT.TabIndex = 18;
+            this.txtFIYAT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(896, 301);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(60, 25);
+            this.label17.TabIndex = 19;
+            this.label17.Text = "Fiyat:";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(12, 597);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(1133, 31);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "ALIM-SATIM  RAPORU ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmUserPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1183, 546);
+            this.ClientSize = new System.Drawing.Size(1157, 632);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.txtFIYAT);
+            this.Controls.Add(this.btnEmir);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btnSatınAl);
             this.Controls.Add(this.txtKG);
@@ -420,6 +538,7 @@ namespace Yazılım_Yapımı_Project
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmUserPanel";
             this.Text = "USER PANEL";
@@ -473,5 +592,15 @@ namespace Yazılım_Yapımı_Project
         private System.Windows.Forms.TextBox txtUrunFiyat;
         private System.Windows.Forms.TextBox txtUrunAd;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnJpy;
+        private System.Windows.Forms.Button btnSTR;
+        private System.Windows.Forms.Button btnUSD;
+        private System.Windows.Forms.Label lblSTR;
+        private System.Windows.Forms.Label lblUSD;
+        private System.Windows.Forms.Label lblJPY;
+        private System.Windows.Forms.Button btnEmir;
+        private System.Windows.Forms.TextBox txtFIYAT;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button button1;
     }
 }

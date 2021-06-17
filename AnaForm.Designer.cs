@@ -70,7 +70,7 @@ namespace Yazılım_Yapımı_Project
             this.ExitButton.Size = new System.Drawing.Size(37, 25);
             this.ExitButton.TabIndex = 2;
             this.ExitButton.TabStop = false;
-            this.ExitButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);            
             // 
             // AnaForm
             // 

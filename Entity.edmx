@@ -12,6 +12,19 @@
           <Property Name="adminid" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="adminisim" Type="varchar" MaxLength="10" />
           <Property Name="sifre" Type="varchar" MaxLength="10" />
+          <Property Name="komisyon" Type="float" />
+        </EntityType>
+        <EntityType Name="Tbl_Emir">
+          <Key>
+            <PropertyRef Name="EmirId" />
+          </Key>
+          <Property Name="EmirId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmirUrun" Type="varchar" MaxLength="30" />
+          <Property Name="EmirKilo" Type="float" />
+          <Property Name="EmirFiyat" Type="float" />
+          <Property Name="EmirTarih" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="EmirDurum" Type="bit" />
+          <Property Name="EmirUser" Type="int" />
         </EntityType>
         <EntityType Name="Tbl_Urun">
           <Key>
@@ -39,6 +52,18 @@
           <Property Name="Bakiye" Type="int" />
           <Property Name="BAKIYEYUKLE" Type="int" />
         </EntityType>
+        <Association Name="FK_Tbl_Emir_Tbl_User">
+          <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="0..1" />
+          <End Role="Tbl_Emir" Type="Self.Tbl_Emir" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User">
+              <PropertyRef Name="Kid" />
+            </Principal>
+            <Dependent Role="Tbl_Emir">
+              <PropertyRef Name="EmirUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Tbl_Urun_Tbl_User">
           <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="0..1" />
           <End Role="Tbl_Urun" Type="Self.Tbl_Urun" Multiplicity="*" />
@@ -53,8 +78,13 @@
         </Association>
         <EntityContainer Name="YazilimYapimiModelStoreContainer">
           <EntitySet Name="Tbl_admin" EntityType="Self.Tbl_admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Emir" EntityType="Self.Tbl_Emir" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Urun" EntityType="Self.Tbl_Urun" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_User" EntityType="Self.Tbl_User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Tbl_Emir_Tbl_User" Association="Self.FK_Tbl_Emir_Tbl_User">
+            <End Role="Tbl_User" EntitySet="Tbl_User" />
+            <End Role="Tbl_Emir" EntitySet="Tbl_Emir" />
+          </AssociationSet>
           <AssociationSet Name="FK_Tbl_Urun_Tbl_User" Association="Self.FK_Tbl_Urun_Tbl_User">
             <End Role="Tbl_User" EntitySet="Tbl_User" />
             <End Role="Tbl_Urun" EntitySet="Tbl_Urun" />
@@ -71,6 +101,7 @@
           <Property Name="adminid" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="adminisim" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="sifre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="komisyon" Type="Double" />
         </EntityType>
         <EntityType Name="Tbl_Urun">
           <Key>
@@ -99,6 +130,7 @@
           <Property Name="Bakiye" Type="Int32" />
           <NavigationProperty Name="Tbl_Urun" Relationship="Self.FK_Tbl_Urun_Tbl_User" FromRole="Tbl_User" ToRole="Tbl_Urun" />
           <Property Name="BAKIYEYUKLE" Type="Int32" />
+          <NavigationProperty Name="Tbl_Emir" Relationship="YazilimYapimiModel.FK_Tbl_Emir_Tbl_User" FromRole="Tbl_User" ToRole="Tbl_Emir" />
         </EntityType>
         <Association Name="FK_Tbl_Urun_Tbl_User">
           <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="0..1" />
@@ -120,7 +152,37 @@
             <End Role="Tbl_User" EntitySet="Tbl_User" />
             <End Role="Tbl_Urun" EntitySet="Tbl_Urun" />
           </AssociationSet>
+          <EntitySet Name="Tbl_Emir" EntityType="YazilimYapimiModel.Tbl_Emir" />
+          <AssociationSet Name="FK_Tbl_Emir_Tbl_User" Association="YazilimYapimiModel.FK_Tbl_Emir_Tbl_User">
+            <End Role="Tbl_User" EntitySet="Tbl_User" />
+            <End Role="Tbl_Emir" EntitySet="Tbl_Emir" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Tbl_Emir">
+          <Key>
+            <PropertyRef Name="EmirId" />
+          </Key>
+          <Property Name="EmirId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmirUrun" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EmirKilo" Type="Double" />
+          <Property Name="EmirFiyat" Type="Double" />
+          <Property Name="EmirTarih" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EmirDurum" Type="Boolean" />
+          <Property Name="EmirUser" Type="Int32" />
+          <NavigationProperty Name="Tbl_User" Relationship="YazilimYapimiModel.FK_Tbl_Emir_Tbl_User" FromRole="Tbl_Emir" ToRole="Tbl_User" />
+        </EntityType>
+        <Association Name="FK_Tbl_Emir_Tbl_User">
+          <End Type="YazilimYapimiModel.Tbl_User" Role="Tbl_User" Multiplicity="0..1" />
+          <End Type="YazilimYapimiModel.Tbl_Emir" Role="Tbl_Emir" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User">
+              <PropertyRef Name="Kid" />
+            </Principal>
+            <Dependent Role="Tbl_Emir">
+              <PropertyRef Name="EmirUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -130,6 +192,7 @@
           <EntitySetMapping Name="Tbl_admin">
             <EntityTypeMapping TypeName="YazilimYapimiModel.Tbl_admin">
               <MappingFragment StoreEntitySet="Tbl_admin">
+                <ScalarProperty Name="komisyon" ColumnName="komisyon" />
                 <ScalarProperty Name="adminid" ColumnName="adminid" />
                 <ScalarProperty Name="adminisim" ColumnName="adminisim" />
                 <ScalarProperty Name="sifre" ColumnName="sifre" />
@@ -161,6 +224,19 @@
                 <ScalarProperty Name="Tel" ColumnName="Tel" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="Bakiye" ColumnName="Bakiye" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Emir">
+            <EntityTypeMapping TypeName="YazilimYapimiModel.Tbl_Emir">
+              <MappingFragment StoreEntitySet="Tbl_Emir">
+                <ScalarProperty Name="EmirUser" ColumnName="EmirUser" />
+                <ScalarProperty Name="EmirDurum" ColumnName="EmirDurum" />
+                <ScalarProperty Name="EmirTarih" ColumnName="EmirTarih" />
+                <ScalarProperty Name="EmirFiyat" ColumnName="EmirFiyat" />
+                <ScalarProperty Name="EmirKilo" ColumnName="EmirKilo" />
+                <ScalarProperty Name="EmirUrun" ColumnName="EmirUrun" />
+                <ScalarProperty Name="EmirId" ColumnName="EmirId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

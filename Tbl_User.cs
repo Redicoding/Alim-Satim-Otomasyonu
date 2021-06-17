@@ -18,6 +18,7 @@ namespace Yazılım_Yapımı_Project
         public Tbl_User()
         {
             this.Tbl_Urun = new HashSet<Tbl_Urun>();
+            this.Tbl_Emir = new HashSet<Tbl_Emir>();
         }
     
         public int Kid { get; set; }
@@ -33,5 +34,7 @@ namespace Yazılım_Yapımı_Project
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_Urun> Tbl_Urun { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tbl_Emir> Tbl_Emir { get; set; }
     }
 }

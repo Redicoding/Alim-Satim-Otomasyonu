@@ -17,11 +17,7 @@ namespace Yazılım_Yapımı_Project
             InitializeComponent();
         }
 
-        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
-        {
-            Application.Exit();
-        }
-
+       
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             AdminGiris admn = new AdminGiris();
@@ -34,6 +30,11 @@ namespace Yazılım_Yapımı_Project
             UserGiris usr = new UserGiris();
             usr.Show();
             this.Hide();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

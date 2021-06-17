@@ -31,8 +31,8 @@ namespace Yazılım_Yapımı_Project
         {
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.datagridurun = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.datagridbakiye = new System.Windows.Forms.DataGridView();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtURUNAD = new System.Windows.Forms.TextBox();
@@ -46,9 +46,11 @@ namespace Yazılım_Yapımı_Project
             this.btnBakiyeOnayla = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblKomisyon = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridurun)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridbakiye)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,14 +72,6 @@ namespace Yazılım_Yapımı_Project
             this.panel1.Size = new System.Drawing.Size(564, 307);
             this.panel1.TabIndex = 6;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.datagridbakiye);
-            this.panel2.Location = new System.Drawing.Point(635, 105);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(534, 307);
-            this.panel2.TabIndex = 7;
-            // 
             // datagridurun
             // 
             this.datagridurun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -90,6 +84,14 @@ namespace Yazılım_Yapımı_Project
             this.datagridurun.Size = new System.Drawing.Size(564, 307);
             this.datagridurun.TabIndex = 0;
             this.datagridurun.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridurun_CellClick);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.datagridbakiye);
+            this.panel2.Location = new System.Drawing.Point(635, 105);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(534, 307);
+            this.panel2.TabIndex = 7;
             // 
             // datagridbakiye
             // 
@@ -220,11 +222,33 @@ namespace Yazılım_Yapımı_Project
             this.label7.TabIndex = 22;
             this.label7.Text = "Onaylanma Bekleyen Bakiyeler";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(8, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(156, 24);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Muhasebe Kasa :";
+            // 
+            // lblKomisyon
+            // 
+            this.lblKomisyon.AutoSize = true;
+            this.lblKomisyon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblKomisyon.Location = new System.Drawing.Point(170, 9);
+            this.lblKomisyon.Name = "lblKomisyon";
+            this.lblKomisyon.Size = new System.Drawing.Size(32, 24);
+            this.lblKomisyon.TabIndex = 24;
+            this.lblKomisyon.Text = "TL";
+            // 
             // FrmAdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1181, 555);
+            this.Controls.Add(this.lblKomisyon);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnBakiyeOnayla);
@@ -241,11 +265,11 @@ namespace Yazılım_Yapımı_Project
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Name = "FrmAdminPanel";
-            this.Text = "FrmAdminPanel";
+            this.Text = "ADMIN PANELI";
             this.Load += new System.EventHandler(this.FrmAdminPanel_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagridurun)).EndInit();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagridbakiye)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -271,5 +295,7 @@ namespace Yazılım_Yapımı_Project
         private System.Windows.Forms.Button btnBakiyeOnayla;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblKomisyon;
     }
 }

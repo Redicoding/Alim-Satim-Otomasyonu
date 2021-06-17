@@ -18,7 +18,7 @@ namespace Yazılım_Yapımı_Project
         }
 
         YazilimYapimiEntities en = new YazilimYapimiEntities();
-
+        
         private void FrmAdminPanel_Load(object sender, EventArgs e)
         {
             datagridurun.DataSource = (from x in en.Tbl_Urun
@@ -42,7 +42,8 @@ namespace Yazılım_Yapımı_Project
 
                                        }).ToList();
 
-                                     
+            lblKomisyon.Text = (from x in en.Tbl_admin select x.komisyon).FirstOrDefault().ToString() + " TL ";
+                                
         }
 
         private void datagridurun_CellClick(object sender, DataGridViewCellEventArgs e)
